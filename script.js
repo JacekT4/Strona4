@@ -19,7 +19,7 @@
 	var dodaj = document.getElementById("dodaj");
 	var lista = document.getElementById("lista");
 
-    dodaj.addEventListener("click", function() {
+	dodaj.addEventListener("click", function() {
 		var wartosc = document.getElementById("produkt").value;
 		dodajDoListy(lista, wartosc);
 	});
