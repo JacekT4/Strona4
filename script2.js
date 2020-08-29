@@ -3,15 +3,15 @@
 	var usunZListy = function usunZListy(wiersz) {
 		debug && console.log(wiersz);
 		if (typeof wiersz != "object") {
-			debug && console.log("Zły typ", typeof wiersz);        //typeof sprawdza typ
-			return;
+			debug && console.log("Zły typ", typeof wiersz);        //typeof sprawdza typ  | TO JEST NASZE ZABEZPIECZENIE wyswietla jesli typy sa złe
+			return;                      //poprostu zwaraca pusta warosc i typ jest dobry
 		}
 		wiersz.remove();
 	}	
 	var dodajDoListy = function dodajDoListy(lista, wartosc) {
 		debug && console.log(lista, wartosc);
 		if (typeof lista != "object" || typeof wartosc != "string") {
-			debug && console.log("Złe typy podane", typeof lista, typeof wartosc);        //typeof sprawdza typ
+			debug && console.log("Złe typy podane", typeof lista, typeof wartosc);   //typeof sprawdza typ | TO JEST NASZE ZABEZPIECZENIE wyswietla jesli typy sa złe
 			return;
 		}
 		wartosc = wartosc.replace(/[^a-z0-9 ]/gi,'');                       //ZABEZPIECZNIE //^wszystko rożne od tego po prawej // gi - globalnie i i to 	nie 	 	zwraca uwagi na wielkość liter
@@ -32,7 +32,7 @@
 		var wartosc = document.getElementById("produkt").value;
 		dodajDoListy(lista, wartosc);
 	});
-	setTimeout(function(){              //Przykład błedu jaki ktoś moze w kodzie zamieścić
+	setTimeout(function(){              //Przykład błedu jaki ktoś moze w kodzie zamieścić np. jakiś inny programista który będzie na kodzie kiedyś pisał
 		dodajDoListy(123,"test1");
 		usunZListy(true);
 	},5000);
